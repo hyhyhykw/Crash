@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="crash_tv_title" type="id"/>
+    <item name="crash_tv_check" type="id"/>
+    <item name="crash_tv_restart" type="id"/>
+    <item name="crash_lv_list" type="id"/>
+    <item name="crash_lyt_back" type="id"/>
+    <item name="crash_tv_log" type="id"/>
+    <item name="crash_lyt_upload" type="id"/>
+    <item name="crash_iv_icon" type="id"/>
+    <item name="crash_tv_size" type="id"/>
+    <item name="crash_lyt_return" type="id"/>
+    <item name="crash_lyt_empty" type="id"/>
+</resources>

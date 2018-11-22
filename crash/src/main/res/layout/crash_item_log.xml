@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="#fff"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingStart="15dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@id/crash_iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:adjustViewBounds="true"
+        android:tint="#607D8B"/>
+
+    <TextView
+        android:id="@id/crash_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/crash_iv_icon"
+        android:layout_alignBottom="@+id/crash_iv_icon"
+        android:layout_marginStart="10dp"
+        android:layout_toStartOf="@+id/crash_tv_size"
+        android:layout_toEndOf="@+id/crash_iv_icon"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:textColor="#212121"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@id/crash_tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="#666"
+        android:textSize="12sp"/>
+</RelativeLayout>

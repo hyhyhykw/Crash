@@ -1,0 +1,13 @@
+<resources>
+    <string name="crash_error_explanation">抱歉，出现了不可预期的错误，您可重新启动应用，或者将错误信息反馈给我们，感谢您的理解与支持！</string>
+    <string name="crash_str_view_stack">查看错误信息</string>
+    <string name="crash_str_restart">重新启动</string>
+    <string name="crash_str_log">日志</string>
+    <string name="crash_str_return_superior">返回上级</string>
+    <string name="crash_empty_folder">空文件夹</string>
+    <string name="crash_delete_success">删除成功</string>
+    <string name="crash_str_dlg_title">提示</string>
+    <string name="crash_str_file">文件</string>
+    <string name="crash_str_folder">文件夹</string>
+    <string name="crash_delete_message">是否删除此%s?</string>
+</resources>

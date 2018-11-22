@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="CrashWeChatTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#303135</item>
+        <item name="crash_toolbar_bg">#303135</item>
+        <item name="crash_title_color">#ffffff</item>
+
+        <item name="crash_button_bg_color">#1AAD19</item>
+        <item name="crash_button_txt_color">#ffffff</item>
+
+        <item name="crash_light_toolbar">false</item><!--是否修改状态栏字体为黑色-->
+
+    </style>
+
+    <!--白色主题样式，，注意每一项都不能少-->
+    <style name="CrashWhiteTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#ffffff</item>
+        <item name="crash_toolbar_bg">#ffffff</item>
+        <item name="crash_title_color">#333</item>
+
+        <item name="crash_button_bg_color">#7D7DFF</item>
+        <item name="crash_button_txt_color">#ffffff</item>
+
+        <item name="crash_light_toolbar">true</item><!--是否修改状态栏字体为黑色-->
+    </style>
+
+    <!--QQ数字风格样式，注意每一项都不能少-->
+    <style name="CrashQQTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#7D7DFF</item>
+        <item name="crash_toolbar_bg">#7D7DFF</item>
+        <item name="crash_title_color">#fff</item>
+        <item name="crash_light_toolbar">false</item><!--是否修改状态栏字体为黑色-->
+
+        <item name="crash_button_bg_color">#7D7DFF</item>
+        <item name="crash_button_txt_color">#ffffff</item>
+    </style>
+</resources>

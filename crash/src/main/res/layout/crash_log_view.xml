@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="?attr/crash_toolbar_bg">
+
+        <FrameLayout
+            android:id="@id/crash_lyt_back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/crash_str_view_stack"
+                android:src="@drawable/crash_ic_back"
+                android:tint="?attr/crash_title_color"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@id/crash_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="?attr/crash_title_color"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#eee"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@id/crash_tv_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#333"
+                android:textSize="12sp"/>
+        </ScrollView>
+
+        <ImageButton
+            android:id="@id/crash_lyt_upload"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="30dp"
+            android:background="@drawable/crash_upload_shape_bg"
+            android:clickable="true"
+            android:contentDescription="@string/crash_str_view_stack"
+            android:elevation="10dp"
+            android:foreground="@drawable/crash_upload_shape"
+            android:padding="10dp"
+            android:src="@drawable/crash_file_upload"/>
+    </FrameLayout>
+
+
+</LinearLayout>

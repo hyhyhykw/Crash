@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.hy.crash">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application>
+        <activity
+            android:name="com.hy.crash.CrashErrorActivity"
+            android:theme="@style/CrashQQTheme"/>
+
+        <activity
+            android:name="com.hy.crash.CrashErrorLogListActivity"
+            android:theme="@style/CrashQQTheme"/>
+
+        <activity
+            android:name="com.hy.crash.CrashLogActivity"
+            android:theme="@style/CrashQQTheme"/>
+    </application>
+</manifest>

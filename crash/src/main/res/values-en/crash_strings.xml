@@ -1,0 +1,13 @@
+<resources>
+    <string name="crash_error_explanation">Sorry, an unexpected error has occurred. You can restart the app or send us an error message. Thank you for your understanding and support!</string>
+    <string name="crash_str_view_stack">View error message</string>
+    <string name="crash_str_restart">Restart App</string>
+    <string name="crash_str_log">Log</string>
+    <string name="crash_str_return_superior">Return Superior</string>
+    <string name="crash_empty_folder">Empty Folder</string>
+    <string name="crash_delete_success">Delete Success</string>
+    <string name="crash_str_dlg_title">Prompt</string>
+    <string name="crash_str_file">File</string>
+    <string name="crash_str_folder">Folder</string>
+    <string name="crash_delete_message">Do you want to delete this %s ?</string>
+</resources>

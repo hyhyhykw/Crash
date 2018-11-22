@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <attr name="crash_toolbar_bg" format="color"/>
+    <attr name="crash_title_color" format="color"/>
+    <attr name="crash_button_bg_color" format="color"/>
+    <attr name="crash_button_txt_color" format="color"/>
+    <attr name="crash_light_toolbar" format="boolean"/>
+</resources>
