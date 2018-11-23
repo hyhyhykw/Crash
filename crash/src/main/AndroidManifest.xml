@@ -5,16 +5,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application>
-        <activity
-            android:name="com.hy.crash.CrashErrorActivity"
-            android:theme="@style/CrashQQTheme"/>
 
-        <activity
-            android:name="com.hy.crash.CrashErrorLogListActivity"
-            android:theme="@style/CrashQQTheme"/>
-
-        <activity
-            android:name="com.hy.crash.CrashLogActivity"
-            android:theme="@style/CrashQQTheme"/>
     </application>
 </manifest>
