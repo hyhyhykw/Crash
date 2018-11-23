@@ -10,4 +10,9 @@
     <string name="crash_str_file">File</string>
     <string name="crash_str_folder">Folder</string>
     <string name="crash_delete_message">Do you want to delete this %s ?</string>
+    <string name="crash_str_device_model">Device Model: </string>
+    <string name="crash_str_time">Crash Time: </string>
+    <string name="crash_str_version">Version: </string>
+    <string name="crash_str_unknown">Unknown</string>
+    <string name="crash_str_crash_log">Crash Log：</string>
 </resources>

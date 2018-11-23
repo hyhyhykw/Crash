@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.StringRes;
 import android.util.Log;
 
 import java.io.File;
@@ -133,19 +134,19 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         File crashFile = new File(dir, fileName);
 
         StringBuilder sbl = new StringBuilder();
-        sbl.append("机型：").append(getDeviceModelName()).append("\n");
-        sbl.append("时间：").append(date)
+        sbl.append(getString(R.string.crash_str_device_model)).append(getDeviceModelName()).append("\n");
+        sbl.append(getString(R.string.crash_str_time)).append(date)
                 .append(" ").append(time)
                 .append("\n");
         String pkgName = sApplication.getPackageName();
 
         try {
             PackageInfo packageInfo = sApplication.getPackageManager().getPackageInfo(pkgName, 0);
-            sbl.append("版本：").append(packageInfo.versionName).append("\n");
+            sbl.append(getString(R.string.crash_str_version)).append(packageInfo.versionName).append("\n");
         } catch (PackageManager.NameNotFoundException ignore) {
-            sbl.append("版本：").append("未知").append("\n");
+            sbl.append(getString(R.string.crash_str_version)).append(getString(R.string.crash_str_unknown)).append("\n");
         }
-        sbl.append("错误日志：").append("\n");
+        sbl.append(getString(R.string.crash_str_crash_log)).append("\n");
         sbl.append(crashMsg);
         try {
             if (!crashFile.exists()) {
@@ -159,6 +160,10 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
         }
 
+    }
+
+    private String getString(@StringRes int resId) {
+        return sApplication.getString(resId);
     }
 
     void upload(String filePath) {

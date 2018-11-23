@@ -10,4 +10,9 @@
     <string name="crash_str_file">文件</string>
     <string name="crash_str_folder">文件夹</string>
     <string name="crash_delete_message">是否删除此%s?</string>
+    <string name="crash_str_device_model">机型：</string>
+    <string name="crash_str_time">时间：</string>
+    <string name="crash_str_version">版本：</string>
+    <string name="crash_str_unknown">未知</string>
+    <string name="crash_str_crash_log">错误日志：</string>
 </resources>
