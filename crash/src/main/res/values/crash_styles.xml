@@ -11,6 +11,7 @@
         <item name="crash_button_txt_color">#ffffff</item>
 
         <item name="crash_light_toolbar">false</item><!--是否修改状态栏字体为黑色-->
+        <item name="crash_hide_upload">false</item>
 
     </style>
 
@@ -24,6 +25,7 @@
         <item name="crash_button_txt_color">#ffffff</item>
 
         <item name="crash_light_toolbar">true</item><!--是否修改状态栏字体为黑色-->
+        <item name="crash_hide_upload">false</item>
     </style>
 
     <!--QQ数字风格样式，注意每一项都不能少-->
@@ -35,5 +37,7 @@
 
         <item name="crash_button_bg_color">#7D7DFF</item>
         <item name="crash_button_txt_color">#ffffff</item>
+
+        <item name="crash_hide_upload">false</item>
     </style>
 </resources>

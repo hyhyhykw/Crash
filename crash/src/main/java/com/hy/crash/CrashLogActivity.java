@@ -28,6 +28,7 @@ public class CrashLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crash_log_view);
         boolean isStatusBlack = CommonUtils.getTypeValueBoolean(this, R.attr.crash_light_toolbar);
+
         CommonUtils.processMIUI(this, isStatusBlack);
         Intent intent = getIntent();
         mFilePath = intent.getStringExtra("file");
@@ -36,7 +37,8 @@ public class CrashLogActivity extends AppCompatActivity {
         TextView mTvTitle = findViewById(R.id.crash_tv_title);
         mTvContent = findViewById(R.id.crash_tv_log);
         View mLytUpload = findViewById(R.id.crash_lyt_upload);
-
+        boolean isHideUpload = CommonUtils.getTypeValueBoolean(this, R.attr.crash_hide_upload);
+        mLytUpload.setVisibility(isHideUpload ? View.GONE : View.VISIBLE);
         File file = new File(mFilePath);
         mTvTitle.setText(file.getName());
 

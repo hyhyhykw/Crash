@@ -7,4 +7,5 @@
     <attr name="crash_button_bg_color" format="color"/>
     <attr name="crash_button_txt_color" format="color"/>
     <attr name="crash_light_toolbar" format="boolean"/>
+    <attr name="crash_hide_upload" format="boolean"/>
 </resources>
