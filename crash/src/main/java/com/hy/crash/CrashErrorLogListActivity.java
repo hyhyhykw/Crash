@@ -90,7 +90,7 @@ public class CrashErrorLogListActivity extends AppCompatActivity {
         mLytReturn.setVisibility(mHasTop ? View.VISIBLE : View.GONE);
 
         mFiles = filePath.listFiles();
-        mLytEmpty.setVisibility(mFiles.length == 0 ? View.VISIBLE : View.GONE);
+        mLytEmpty.setVisibility(null == mFiles || mFiles.length == 0 ? View.VISIBLE : View.GONE);
         mAdapter.notifyDataSetChanged();
     }
 
