@@ -1,12 +1,7 @@
 package com.hy.crash;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created time : 2018/11/21 14:36.
@@ -53,18 +53,10 @@ public class CrashErrorLogListActivity extends AppCompatActivity {
         mAdapter = new LogAdapter();
         lvList.setAdapter(mAdapter);
 
-        mLytBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        mLytReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mHasTop) {
-                    initData(currentPath.getParentFile());
-                }
+        mLytBack.setOnClickListener(v -> onBackPressed());
+        mLytReturn.setOnClickListener(v -> {
+            if (mHasTop) {
+                initData(currentPath.getParentFile());
             }
         });
 
@@ -154,18 +146,10 @@ public class CrashErrorLogListActivity extends AppCompatActivity {
         }
 
         void bind(final int position) {
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onItemClick(position);
-                }
-            });
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    onItemLongClick(position);
-                    return true;
-                }
+            itemView.setOnClickListener(v -> onItemClick(position));
+            itemView.setOnLongClickListener(v -> {
+                onItemLongClick(position);
+                return true;
             });
             File file = mFiles[position];
             mIvIcon.setImageResource(file.isDirectory() ?
@@ -186,29 +170,21 @@ public class CrashErrorLogListActivity extends AppCompatActivity {
                 .setCancelable(true)
                 .setTitle(R.string.crash_str_dlg_title)
                 .setMessage(message)
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                        if (file.isFile()) {
-                            boolean delete = file.delete();
-                            if (delete) {
-                                Toast.makeText(CrashErrorLogListActivity.this, getString(R.string.crash_delete_success), Toast.LENGTH_SHORT).show();
-                                initData(currentPath);
-                            }
-                        } else {
-                            delete(file);
-                            isDeleting = false;
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                    dialog.cancel();
+                    if (file.isFile()) {
+                        boolean delete = file.delete();
+                        if (delete) {
+                            Toast.makeText(CrashErrorLogListActivity.this, getString(R.string.crash_delete_success), Toast.LENGTH_SHORT).show();
                             initData(currentPath);
                         }
+                    } else {
+                        delete(file);
+                        isDeleting = false;
+                        initData(currentPath);
                     }
                 })
-                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                })
+                .setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.cancel())
                 .show();
     }
 

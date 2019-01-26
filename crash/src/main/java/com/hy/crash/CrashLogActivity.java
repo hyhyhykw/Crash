@@ -2,8 +2,6 @@ package com.hy.crash;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,6 +10,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created time : 2018/11/21 15:31.
@@ -42,18 +43,8 @@ public class CrashLogActivity extends AppCompatActivity {
         File file = new File(mFilePath);
         mTvTitle.setText(file.getName());
 
-        mLytBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        mLytUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CrashHandler.getInstance().upload(mFilePath);
-            }
-        });
+        mLytBack.setOnClickListener(v -> onBackPressed());
+        mLytUpload.setOnClickListener(v -> CrashHandler.getInstance().upload(mFilePath));
 
         initData();
     }
@@ -73,12 +64,7 @@ public class CrashLogActivity extends AppCompatActivity {
                 } catch (IOException ignore) {
                 }
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mTvContent.setText(sbl.toString());
-                    }
-                });
+                runOnUiThread(() -> mTvContent.setText(sbl.toString()));
             }
         }.start();
     }

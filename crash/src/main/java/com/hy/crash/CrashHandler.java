@@ -7,7 +7,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.StringRes;
 import android.util.Log;
 
 import java.io.File;
@@ -16,6 +15,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Calendar;
+
+import androidx.annotation.StringRes;
 
 /**
  * Created time : 2018/11/21 9:56.
