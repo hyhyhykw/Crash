@@ -45,6 +45,10 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         return mCrashModule.getLaunchActivity();
     }
 
+    boolean debug(){
+        return mCrashModule.debug();
+    }
+
     private static final String DEFAULT_HANDLER_PACKAGE_NAME = "com.android.internal.os";
 
     public void install(Application app, CrashModule crashModule) {

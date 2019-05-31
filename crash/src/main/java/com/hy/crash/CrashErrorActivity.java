@@ -3,6 +3,7 @@ package com.hy.crash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class CrashErrorActivity extends AppCompatActivity {
     private String mPath;
     private String mFile;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +27,17 @@ public class CrashErrorActivity extends AppCompatActivity {
         boolean isStatusBlack = CommonUtils.getTypeValueBoolean(this, R.attr.crash_light_toolbar);
         CommonUtils.processMIUI(this, isStatusBlack);
 
+        TextView tvView = findViewById(R.id.crash_tv_check);
+        if (CrashHandler.getInstance().debug()) {
+            tvView.setVisibility(View.VISIBLE);
+        } else {
+            tvView.setVisibility(View.GONE);
+        }
         Intent intent = getIntent();
         mPath = intent.getStringExtra("path");
         mFile = intent.getStringExtra("file");
+
+        CrashHandler.getInstance().upload(mFile);
     }
 
     public void view(View view) {
