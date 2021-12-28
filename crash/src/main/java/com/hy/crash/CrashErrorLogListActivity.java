@@ -2,6 +2,7 @@ package com.hy.crash;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.Arrays;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -82,6 +84,9 @@ public class CrashErrorLogListActivity extends AppCompatActivity {
         mLytReturn.setVisibility(mHasTop ? View.VISIBLE : View.GONE);
 
         mFiles = filePath.listFiles();
+        Arrays.sort(mFiles, (o1, o2) -> Long.compare(o1.lastModified(), o2.lastModified()));
+
+        Log.e("TAG", "files====>" + Arrays.toString(mFiles));
         mLytEmpty.setVisibility(null == mFiles || mFiles.length == 0 ? View.VISIBLE : View.GONE);
         mAdapter.notifyDataSetChanged();
     }

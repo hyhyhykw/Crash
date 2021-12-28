@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Calendar;
+import java.util.Locale;
 
 import androidx.annotation.StringRes;
 
@@ -45,7 +46,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         return mCrashModule.getLaunchActivity();
     }
 
-    boolean debug(){
+    boolean debug() {
         return mCrashModule.debug();
     }
 
@@ -81,8 +82,8 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         final String crashMsg = writer.toString();
         final String filePath;
         int year = mCalendar.get(Calendar.YEAR);
-        int month = mCalendar.get(Calendar.MONTH) + 1;
-        int day = mCalendar.get(Calendar.DATE);
+        String month = String.format(Locale.getDefault(), "%02d", mCalendar.get(Calendar.MONTH) + 1);
+        String day = String.format(Locale.getDefault(), "%02d", mCalendar.get(Calendar.DATE));
         String path = year + File.separator + month + "-" + day + File.separator;
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             File filesDir = sApplication.getExternalFilesDir("crash");
@@ -105,19 +106,15 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         }
 
         final String date = year + "-" + month + "-" + day;
-        int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
-        int minute = mCalendar.get(Calendar.MINUTE);
-        int second = mCalendar.get(Calendar.SECOND);
+
+        String hour = String.format(Locale.getDefault(), "%02d", mCalendar.get(Calendar.HOUR_OF_DAY));
+        String minute = String.format(Locale.getDefault(), "%02d", mCalendar.get(Calendar.MINUTE));
+        String second = String.format(Locale.getDefault(), "%02d", mCalendar.get(Calendar.SECOND));
 
         final String time = hour + ":" + minute + ":" + second;
 
         final String fileName = "crash-" + date + "-" + hour + "-" + minute + "-" + second + ".log";
-        new Thread() {
-            @Override
-            public void run() {
-                saveCrashInfo2File(filePath, crashMsg, fileName, date, time);
-            }
-        }.start();
+        new Thread(() -> saveCrashInfo2File(filePath, crashMsg, fileName, date, time)).start();
 
 
         sApplication.startActivity(new Intent(sApplication, CrashErrorActivity.class)

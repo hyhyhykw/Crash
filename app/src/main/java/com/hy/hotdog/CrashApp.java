@@ -54,4 +54,9 @@ public class CrashApp extends Application implements CrashModule {
     public void upload(String filePath) {
         Toast.makeText(this, "点击了上传", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public boolean debug() {
+        return true;
+    }
 }
